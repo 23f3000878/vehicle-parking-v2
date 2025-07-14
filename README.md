@@ -1,2 +1,2 @@
 # quiz-master-v2
-This is a full-stack quiz management web applications. It acts as a bridge between teachers and students to provide them all the necessary and useful tools.
+This is a full-stack vehicle parking management web applications. It helps people find available parking lots in the location they want, and book available parking spots there.
