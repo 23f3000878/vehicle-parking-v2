@@ -5,7 +5,7 @@ auth_bp = Blueprint('auth', __name__,url_prefix='/auth')
 
 
 # Register User
-@auth_bp.route('/register',methods=['GET','POST'])
+@auth_bp.route('/register',methods=['POST'])
 def register():
     data = request.get_json()
     user = User.query.filter_by(username=data['username']).first()
@@ -14,8 +14,8 @@ def register():
 
     user = User(username=data['username'],fullname=data['fullname'])
 
-    user.set_password(user['password'])
-    access_token = create_access_token(identity=user['username'])
+    user.set_password(data['password'])
+    access_token = create_access_token(identity=user.username)
     db.session.add(user)
     db.session.commit()
     return jsonify(access_token = access_token),201
@@ -31,5 +31,5 @@ def login():
     if not user.check_password(data['password']):
         return jsonify({'msg':'Incorrect Password!'})
 
-    access_token = create_access_token(identity=user['username'])
+    access_token = create_access_token(identity=user.username)
     return jsonify(access_token = access_token),200
