@@ -1,5 +1,0 @@
-Flask;
-flask_sqlalchemy;
-jinja2;
-flask_jwt_extended;
-werkzeug;
