@@ -22,7 +22,7 @@ const renderChart = () => {
     chartInstance.destroy();
   }
 
-  const labels = props.chartData.map((item) => item.date.slice(5)); // e.g., "07-25"
+  const labels = props.chartData.map((item) => item.date.slice(5));
   const counts = props.chartData.map((item) => item.count);
 
   chartInstance = new Chart(chartRef.value, {

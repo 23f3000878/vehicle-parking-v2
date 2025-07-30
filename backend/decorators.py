@@ -10,7 +10,7 @@ def login_required(f):
         email = get_jwt_identity()
         user = User.query.filter_by(email=email).first()
         if not user:
-            abort(401)  # Invalid token or user doesn't exist
+            abort(401)
         g.current_user = user
         return f(*args, **kwargs)
     return decorated_function

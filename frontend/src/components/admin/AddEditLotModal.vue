@@ -89,7 +89,7 @@ import axios from "../../services/axios";
 
 const props = defineProps({
   visible: Boolean,
-  lot: Object, // passed from AdminLots.vue
+  lot: Object,
 });
 
 const emit = defineEmits(["close", "saved"]);
@@ -103,7 +103,6 @@ const form = reactive({
   no_of_spots: "",
 });
 
-// 🧠 Watch for prop change and prefill form when editing
 watch(
   () => props.lot,
   (lot) => {
@@ -124,15 +123,13 @@ watch(
 const handleSubmit = async () => {
   try {
     if (props.lot && props.lot.id) {
-      // PUT update
       await axios.put(`/admin/lots/${props.lot.id}`, { ...form });
     } else {
-      // POST create
       await axios.post("/admin/lots", { ...form });
     }
 
-    emit("saved"); // Refresh list
-    emit("close"); // Close modal
+    emit("saved");
+    emit("close");
   } catch (err) {
     console.error("Error saving lot:", err);
     alert("Something went wrong. Please try again.");

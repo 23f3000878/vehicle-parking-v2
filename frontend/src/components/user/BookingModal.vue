@@ -83,7 +83,6 @@ const emit = defineEmits(["close", "refresh"]);
 
 const vehicleNo = ref("");
 
-// Reset field when modal opens
 watch(
   () => props.visible,
   (val) => {

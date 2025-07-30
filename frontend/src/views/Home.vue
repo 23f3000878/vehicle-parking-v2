@@ -1,4 +1,3 @@
-<!-- src/views/Home.vue -->
 <template>
   <div
     class="hero-container d-flex flex-column min-vh-100 justify-content-between"
@@ -55,9 +54,7 @@
   </div>
 </template>
 
-<script setup>
-// No logic needed yet
-</script>
+<script setup></script>
 
 <style scoped>
 .hero-container {

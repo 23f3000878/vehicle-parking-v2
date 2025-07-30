@@ -136,7 +136,6 @@ const releaseSpot = async (r) => {
   }
 };
 
-// somewhere at the top of ReservationTable.vue (and/or UserDashboard.vue)
 function parseUTC(s) {
   if (!s) return null;
   // if already has timezone info, leave it; else append “Z”

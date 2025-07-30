@@ -1,4 +1,3 @@
-<!-- components/admin/SpotGrid.vue -->
 <template>
   <button
     v-for="spot in spots"

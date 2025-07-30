@@ -1,4 +1,3 @@
-<!-- views/user/UserSummary.vue -->
 <template>
   <UserNavbar />
   <div class="container py-4">
