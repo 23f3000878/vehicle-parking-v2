@@ -8,7 +8,7 @@ database_path = os.path.join(basedir, 'app.sqlite3')
 class Config:
     SQLALCHEMY_DATABASE_URI = f'sqlite:///{database_path}'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    JWT_SECRET_KEY = 'THIS_is_VERY_secret_KEY;;;blahhhhblahh'
+    JWT_SECRET_KEY = 'THIS_IS_VERY_SECRET_KEY'
     JWT_ACCESS_TOKEN_EXPIRES = timedelta(minutes=45)
     CACHE_TYPE = 'RedisCache'
     CACHE_REDIS_HOST = 'localhost'
@@ -37,6 +37,6 @@ class Config:
     MAIL_SERVER = 'smtp.gmail.com'
     MAIL_PORT = 587
     MAIL_USE_TLS = True
-    MAIL_USERNAME = 'salimansari0986@gmail.com'
+    MAIL_USERNAME = 'your-email@gmail.com'
     MAIL_PASSWORD = 'drre ykwk rayz ldnf'
-    MAIL_DEFAULT_SENDER = 'salimansari0986@gmail.com'
+    MAIL_DEFAULT_SENDER = 'your-mail@gmail.com'
