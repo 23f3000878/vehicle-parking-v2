@@ -1,0 +1,35 @@
+name: Caching Dependencies Example
+
+# This workflow runs on pushes to the main branch
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    # Use the latest Ubuntu runner
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Check out your repository code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. Set up caching for dependencies (example using npm)
+      - name: Cache dependencies
+        id: cache-dependencies
+        uses: actions/cache@v4
+        with:
+          # The path to cache (e.g., ~/.npm for Node.js)
+          path: ~/.npm
+          # The exact key for the cache
+          key: cache-10d0889
+
+      # 3. Echo the cache hit/miss result
+      - name: prime-cache-10d0889
+        run: echo "Cache hit: ${{ steps.cache-dependencies.outputs.cache-hit }}"
+
+      # 4. Install dependencies only if the cache was missed
+      - name: Install dependencies
+        if: steps.cache-dependencies.outputs.cache-hit != 'true'
+        run: npm install # Replace this with your project's actual install command
