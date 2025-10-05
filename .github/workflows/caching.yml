@@ -27,6 +27,7 @@ jobs:
 
       # 3. Echo the cache hit/miss result
       - name: prime-cache-10d0889
+        id: prime_cache_check
         run: echo "Cache hit: ${{ steps.cache-dependencies.outputs.cache-hit }}"
 
       # 4. Install dependencies only if the cache was missed
